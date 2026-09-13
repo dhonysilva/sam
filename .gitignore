@@ -21,3 +21,6 @@ sam-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# The mix escript.build generated
+sam

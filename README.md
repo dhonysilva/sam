@@ -10,17 +10,15 @@ Click [here](https://tolkiengateway.net/wiki/Samwise_Gamgee) to learn more.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `sam` to your list of dependencies in `mix.exs`:
+Every time we changed the application, we must run this command:
 
-```elixir
-def deps do
-  [
-    {:sam, "~> 0.1.0"}
-  ]
-end
+```
+mix escript.build
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/sam>.
+Now, type the `init` command:
+
+```
+~/temp › ../sam/sam init sam
+Initialized empty sam repository in sam/.git
+```
