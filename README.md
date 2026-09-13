@@ -1,6 +1,12 @@
 # Sam
 
-**TODO: Add description**
+My own git adventure from scratch.
+
+### Origin's name
+
+Sam – Samwise Gamgee, a beloved character from J.R.R. Tolkien's Middle-earth, best known as Frodo's loyal companion in The Lord of the Rings.
+
+Click [here](https://tolkiengateway.net/wiki/Samwise_Gamgee) to learn more.
 
 ## Installation
 
@@ -18,4 +24,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/sam>.
-
