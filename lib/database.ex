@@ -13,7 +13,7 @@ defmodule Sam.Database do
     {:ok, dir} = File.cwd()
     db_path = db_path(dir)
 
-    object_path = Path.join([db_path, String.slice(oid, 0..1), String.slice(oid, 2..-1)])
+    object_path = Path.join([db_path, String.slice(oid, 0..1), String.slice(oid, 2..-1//1)])
     dir_name = Path.dirname(object_path)
     temp_path = Path.join([dir_name, generate_temp_name()])
 
