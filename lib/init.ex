@@ -7,7 +7,7 @@ defmodule Sam.Init do
     |> make_dirs()
   end
 
-  # Create the subfolders /objects and /refs
+  # Create the subfolders /.git/objects and /.git/refs
   defp make_dirs(git_path) do
     if not File.exists?(git_path) do
       Enum.each(["objects", "refs"], fn dir ->

@@ -39,7 +39,7 @@ defmodule Sam.Database do
   end
 
   defp db_path(root_path) do
-    Helpers.sam_path(root_path)
+    Helpers.git_path(root_path)
     |> Helpers.db_path()
   end
 
