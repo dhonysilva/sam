@@ -16,7 +16,7 @@ Every time we changed the application, we must run this command:
 mix escript.build
 ```
 
-`escript` let us package the whole application into a single executable file that we can run directly from our command line. It provides a convinient way pack our Command Line Interface (CLI).
+`escript` let us package the whole application into a single executable file that we can run directly from our command line. It provides a convinient way to pack our Command Line Interface (CLI).
 
 Now, type the `init` command:
 
