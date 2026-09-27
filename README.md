@@ -24,3 +24,16 @@ Now, type the `init` command:
 ~/temp › ../sam/sam init sam
 Initialized empty sam repository in sam/.git
 ```
+
+Create the `hello.txt` file with hello content.
+
+```
+sam commit
+```
+
+The command must be run with your working directory set to the repo root (/Users/dhonysilva/estudos/temp/sam, where .git lives), while invoking the binary by its full path from wherever it was built:
+
+```
+cd /Users/dhonysilva/estudos/temp/sam
+/Users/dhonysilva/estudos/sam/sam cat-file CE013625030BA8DBA906F756967F9E9CA394464A
+```
