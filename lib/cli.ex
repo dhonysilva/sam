@@ -53,7 +53,7 @@ defmodule Sam.CLI do
     case Sam.Database.load(oid) do
       {:ok, content} ->
         [_header, data] = :binary.split(content, <<0>>)
-        IO.write(data)
+        IO.binwrite(data)
 
       {:error, _reason} ->
         IO.puts(:stderr, "fatal: Not a valid object name #{oid}")
