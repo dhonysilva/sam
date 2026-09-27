@@ -11,9 +11,8 @@ defmodule Sam.Database do
 
   defp write_object(oid, content) do
     {:ok, dir} = File.cwd()
-    db_path = db_path(dir)
 
-    object_path = Path.join([db_path, String.slice(oid, 0..1), String.slice(oid, 2..-1//1)])
+    object_path = object_path(dir, oid)
     dir_name = Path.dirname(object_path)
     temp_path = Path.join([dir_name, generate_temp_name()])
 
@@ -45,5 +44,21 @@ defmodule Sam.Database do
 
   defp generate_temp_name() do
     "tmp_obj_#{Helpers.generate_random_string(6)}"
+  end
+
+  def load(oid) do
+    {:ok, dir} = File.cwd()
+
+    dir
+    |> object_path(oid)
+    |> File.read()
+    |> case do
+      {:ok, compressed} -> {:ok, :zlib.uncompress(compressed)}
+      {:error, reason} -> {:error, reason}
+    end
+  end
+
+  defp object_path(root_path, oid) do
+    Path.join([db_path(root_path), String.slice(oid, 0..1), String.slice(oid, 2..-1//1)])
   end
 end

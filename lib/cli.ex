@@ -32,11 +32,32 @@ defmodule Sam.CLI do
     end
   end
 
+  defp args_to_internal_representation(["cat-file", oid]) do
+    if File.exists?(".git") do
+      {:cat_file, oid}
+    else
+      IO.puts(:stderr, "repo not initialized")
+      exit(:fatal)
+    end
+  end
+
   defp process({:init, dir}) do
     Sam.Init.init(dir)
   end
 
   defp process({:commit, dir}) do
     Sam.Commit.commit(dir)
+  end
+
+  defp process({:cat_file, oid}) do
+    case Sam.Database.load(oid) do
+      {:ok, content} ->
+        [_header, data] = :binary.split(content, <<0>>)
+        IO.write(data)
+
+      {:error, _reason} ->
+        IO.puts(:stderr, "fatal: Not a valid object name #{oid}")
+        exit(:fatal)
+    end
   end
 end
